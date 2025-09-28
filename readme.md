@@ -1,4 +1,4 @@
-# 🚀 Personal Neovim Configuration
+# 🚀 Neovim Configuration
 
 Welcome to my personal Neovim setup! This configuration is designed to provide a fast, efficient, and modern editing experience using Lua and the Lazy plugin manager.
 
