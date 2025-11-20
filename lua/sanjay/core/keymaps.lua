@@ -12,8 +12,8 @@ keymap.set("i", "kj", "<ESC>", { desc = "Exit insert mode with jk" })
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
--- delete single character without copying into register
--- keymap.set("n", "x", '"_x')
+-- Make 'x' act like 'd' but delete to black hole register
+vim.api.nvim_set_keymap("n", "x", '"_d', { noremap = true, silent = false })
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
@@ -50,3 +50,12 @@ vim.keymap.set("i", "<A-h>", "<Left>", { noremap = true })
 vim.keymap.set("i", "<A-l>", "<Right>", { noremap = true })
 vim.keymap.set("i", "<A-j>", "<Down>", { noremap = true })
 vim.keymap.set("i", "<A-k>", "<Up>", { noremap = true })
+
+-- Navigate to previous file in jump list
+vim.keymap.set("n", "<c-o>", "<c-o>", { desc = "go to previous jump" })
+
+-- navigate to next file in jump list
+vim.keymap.set("n", "<C-i>", "<C-i>", { desc = "Go to next jump" })
+
+-- Disable Ctrl+; in insert mode globally so it doesn't insert ';'
+-- vim.keymap.set("i", "<C-Space>", "<Nop>", { silent = true, noremap = true })
